@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(MyApp());
@@ -45,9 +46,31 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Center(child: Text(widget.title)),
         elevation: 0.0,
       ),
-      body: const Center(
-        child: Text('No Birbs a birbing'),
+      body: const NoContent(),
+    );
+  }
+}
+
+class NoContent extends StatelessWidget {
+
+  const NoContent();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          SvgPicture.asset('assets/tweetstorm.svg',
+          height: 300.0,),
+          const SizedBox(
+          height: 50.0,
+          ),
+          const Text('No Birbs a birbing'),
+        ],
       ),
     );
   }
 }
+
