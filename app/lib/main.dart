@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'no_content.dart';
+import 'post_list.dart';
 
 
 void main() {
@@ -48,9 +49,10 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Center(child: Text(widget.title)),
         elevation: 0.0,
       ),
-      body: const NoContent(),
+      body: const PostList(),
     );
   }
 }
+
 
 
