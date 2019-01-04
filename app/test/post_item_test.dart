@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:birb/post_list.dart';
 import 'package:birb/post_item.dart';
 
 void main() {
-  testWidgets('Render list of posts', (WidgetTester tester) async {
-
+  testWidgets('Renders a post', (WidgetTester tester) async {
     await tester.pumpWidget(const MaterialApp(
-      home: PostList()
+      home: PostItem(),
     ));
 
-    expect(find.byType(PostItem), findsNWidgets(2));
+    expect(find.byType(Card), findsOneWidget);
+    expect(find.text('Prim Birb'), findsOneWidget);
 
   });
 }
